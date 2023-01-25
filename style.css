@@ -1,0 +1,310 @@
+@font-face {
+  font-family: 'Space Mono';
+  src: url('fonts/SpaceMono-Regular.ttf');
+}
+
+:root{
+  --strong-cyan: rgba(38, 192, 171, 1);
+  --very-dark-cyan: rgba(0, 73, 77, 1);
+  --dark-grayish-cyan: rgba(94, 122, 125, 1);
+  --grayish-cyan: rgba(127, 156, 159, 1);
+  --light-grayish-cyan: rgba(197, 228, 231, 1);
+  --very-light-grayish-cyan: rgba(244, 250, 250, 1);
+  --red: rgba(206, 74, 59);
+  --hover-one: rgba(160, 232, 228, 1);
+  --hover-two: rgba(159, 232, 223, 1);
+  --white: rgba(255, 255, 255, 1);
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: 'Space Mono';
+  font-weight: 900;
+}
+
+input{
+  width: 90%;
+  border: none;
+  outline: none;
+  background: none;
+  text-align: right;
+}
+
+button{
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+body{
+  display: flex;
+  flex-direction: column;
+  background-color: var(--light-grayish-cyan);
+}
+
+body header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.7rem;
+  letter-spacing: .5rem;
+  padding: 2rem;
+  color: var(--very-dark-cyan);
+}
+
+.app-box{
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+  padding: 2rem 1.5rem;
+  border-radius: 25px 25px 0 0;
+  background-color: var(--white);
+}
+
+.input-boxes{
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+.input-boxes .input-box, .tip-cont{
+  display: flex;
+  gap: .4rem;
+  flex-direction: column;
+}
+
+.label-box{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.label-box .label{
+  color: var(--dark-grayish-cyan);
+  font-size: 1.1rem;
+}
+
+.label-box .alert-box{
+  color: var(--red);
+  font-size: 1.1rem;
+}
+
+.input-cont{
+  width: 100%;
+  height: 2.8rem;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 5px;
+  background-color: var(--very-light-grayish-cyan);
+}
+
+.input-cont input{
+  color: var(--very-dark-cyan);
+}
+
+.input-cont.focus, .tip-boxes input.focus{
+  border: 2px solid var(--strong-cyan);
+}
+
+.input-cont.warn, .tip-boxes input.warn{
+  border: 2px solid var(--red);
+}
+
+.icon, .material-icons{
+  color: var(--grayish-cyan);
+  font-size: 1.8rem;
+}
+
+input, button, input::placeholder{
+  font-size: 1.7rem;
+}
+
+.tip-boxes{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.tip-boxes :where(button, input){
+  width: 50%;
+  height: 3rem;
+  flex: 45%;
+  border-radius: 7px;
+}
+
+.tip-boxes button{
+  color: var(--white);
+  background-color: var(--very-dark-cyan);
+}
+
+.tip-boxes button:hover{
+  color: var(--very-dark-cyan);
+  background-color: var(--hover-two);
+}
+
+.tip-boxes button.selected{
+  color: var(--very-dark-cyan);
+  background-color: var(--strong-cyan);
+}
+
+.tip-boxes :where(input, input::placeholder){
+  background-color: var(--very-light-grayish-cyan);
+  padding: 0 1rem;
+  color: var(--dark-grayish-cyan);
+}
+
+.tip-boxes input{
+  color: var(--very-dark-cyan);
+}
+
+.result-box{
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  padding: 2.8rem 1.5rem 1.6rem;
+  border-radius: 13px;
+  background-color: var(--very-dark-cyan);
+}
+
+.result-box .result-cont{
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.result-cont .cont{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cont .label{
+  color: var(--white);
+  font-size: 1.1rem;
+}
+
+.label span{
+  color: var(--grayish-cyan);
+  font-size: .9rem;
+}
+
+.cont .result{
+  color: var(--strong-cyan);
+  font-size: 2.2rem;
+}
+
+.result-box button{
+  font-size: 1.4rem;
+  height: 2.8rem;
+  border-radius: 5px;
+  color: var(--very-dark-cyan);
+  background-color: var(--strong-cyan);
+}
+
+.result-box button:hover{
+  background-color: var(--hover-one);
+}
+
+@media only screen and (min-width: 969px) {
+  body{
+    gap: 1.7rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  body header{
+    font-size: 1.2rem;
+  }
+  
+  .app-box{
+    width: 40rem;
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    padding: 1.5rem 1.5rem;
+    border-radius: 15px;
+  }
+  
+  .app-box :where(.input-boxes, .result-box){
+    flex: 50%;
+  }
+  
+  .input-boxes{
+    padding: .8rem 0 .8rem .8rem;
+  }
+  
+  .label-box .label {
+    font-size: .8rem;
+  }
+  
+  .label-box .alert-box {
+    font-size: .8rem;
+  }
+  
+  input, button, input::placeholder{
+    font-size: 1rem;
+  }
+  
+  .input-cont{
+    height: 2.2rem;
+  }
+
+  .icon, .material-icons{
+    color: var(--grayish-cyan);
+    font-size: 1.3rem;
+  }
+  
+  .tip-boxes{
+    gap: .7rem;
+  }
+  
+  .tip-boxes :where(button, input){
+    width: 3.3rem;
+    height: 2.2rem;
+    flex: 25%;
+    border-radius: 5px;
+  }
+  
+  .tip-boxes :where(input, input::placeholder){
+    padding: 0 .5rem;
+  }
+
+  .tip-boxes input::placeholder{
+    font-size: 1rem;
+  }
+  
+  .result-box{
+    justify-content: space-between;
+    border-radius: 10px;
+    padding: 2.3rem 1.5rem 1.5rem;
+  }
+  
+  .cont .label{
+    font-size: .8rem;
+  }
+  
+  .label span{
+    font-size: .75rem;
+  }
+  
+  .cont .result{
+    font-size: 2.5rem;
+  }
+  
+  .result-box button{
+    font-size: .8rem;
+    height: 2.2rem;
+    border-radius: 5px;
+  }
+}
